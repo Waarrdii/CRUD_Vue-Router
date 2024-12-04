@@ -7,8 +7,11 @@ const store = createStore({
                 title: 'Dashboard',
                 icon: 'dashboard',
                 routeName: 'home',
+                component: ['example', 'usersIndex', 'permissionList']
             },
         },
+        activeTab: 'Dashboard',
+        activeComponent: null
     },
     mutations: {
         addTabData(state, [data, title]) {
@@ -30,6 +33,9 @@ const store = createStore({
     getters: {
         navbarData(state) {
             return state.data;
+        },
+        componentTab(state) {
+            return state.data[state.activeTab].component;
         }
     },
 });

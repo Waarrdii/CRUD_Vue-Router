@@ -1,16 +1,19 @@
 <template>
-    <div class="bg-gray-50 h-16 flex flex-row gap-3 relative items-start">
-        <div v-for="item in (Object.keys(navBar))" :key="item" class="flex flex-col border gap-4 mt-2">
+    <div class="bg-gray-50 h-16 flex flex-col justify-end ">
+        <div v-for="item in (Object.keys(navBar))" :key="item" class="flex flex-row gap-4">
             <RouterLink  :to="{ name: navBar[item].routeName }">
                 {{ item }}
             </RouterLink>
-            <div 
-            v-if="router.currentRoute.value.name === navBar[item].routeName"
-            class="absolute bottom-0 border left-0">
-                {{ navBar[item].title }}
-            </div>
         </div>
-        
+        <div 
+            v-if="componentTab"
+            class="flex gap-2">
+            <a
+            v-for="component in componentTab" :key="component"
+            >
+                {{ component }}
+            </a>
+        </div>
     </div>
     
 </template>
@@ -24,6 +27,7 @@ import router from '../router';
 const Store = useStore();
 
 const navBar = computed(() => Store.getters.navbarData);
+const componentTab = computed(() => Store.getters.componentTab);
 
 onMounted(() => {
     console.log(navBar.value);
