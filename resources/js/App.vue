@@ -1,15 +1,18 @@
 <template>
-    <div class="flex items-center gap-3">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/users">Users</RouterLink>
-        <RouterLink to="/permissions">Permissions</RouterLink>
+    <div class="flex flex-row">
+        <SidebarNav />
+        <div class="flex-1 flex flex-col">
+            <TopNavbar />
+            <RouterView />
+        </div>
     </div>
 
-    <RouterView />
+    
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
+import TopNavbar from './components/TopNavbar.vue';
+import SidebarNav from './components/SidebarNav.vue';
 
 
 </script>
