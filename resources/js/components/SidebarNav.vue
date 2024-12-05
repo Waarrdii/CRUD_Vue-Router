@@ -17,7 +17,7 @@ const addTabData = (title) => {
         title: title,
         routeName: title.toLowerCase(),
         icon: title,
-        component: 'index'
+        component: ['index']
     }
     Store.dispatch('addTabData', [data, title]);
     Store.dispatch('setActiveTab', title);
