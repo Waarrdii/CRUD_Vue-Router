@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-50 h-16 flex flex-col justify-end ">
-        <div v-for="item in (Object.keys(navBar))" :key="item" class="flex flex-row gap-4">
-            <RouterLink  :to="{ name: navBar[item].routeName }">
+        <div class="flex flex-row gap-4">
+            <RouterLink v-for="item in (Object.keys(navBar))" :key="item"  :to="{ name: navBar[item].routeName }">
                 {{ item }}
             </RouterLink>
         </div>

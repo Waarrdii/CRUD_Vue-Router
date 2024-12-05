@@ -8,6 +8,7 @@
 
 <script setup>
 import { useStore } from 'vuex';
+import store from '../store';
 
 const Store = useStore();
 
@@ -15,10 +16,12 @@ const addTabData = (title) => {
     const data = {
         title: title,
         routeName: title.toLowerCase(),
-        icon: title
+        icon: title,
+        component: 'index'
     }
-
     Store.dispatch('addTabData', [data, title]);
+    Store.dispatch('setActiveTab', title);
+    console.log(store.getters.activeTab);
 }
 
 </script>

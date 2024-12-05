@@ -23,11 +23,17 @@ const store = createStore({
                     [title]: data
                 }
             }
+        },
+        setActiveTab(state, title) {
+            state.activeTab = title;
         }
     },
     actions: {
         addTabData({ commit }, [data, title]) {
             commit('addTabData', [data, title]);
+        },
+        setActiveTab({ commit }, title) {
+            commit('setActiveTab', title);
         }
     },
     getters: {
@@ -36,6 +42,9 @@ const store = createStore({
         },
         componentTab(state) {
             return state.data[state.activeTab].component;
+        },
+        activeTab(state) {
+            return state.activeTab;
         }
     },
 });
