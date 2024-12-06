@@ -27,10 +27,10 @@ const store = createStore({
         setActiveTab(state, title) {
             state.activeTab = title;
         },
-        addComponent(state, data) {
+        addComponent(state, [title, data]) {
             state.data[state.activeTab].component = {
                 ...state.data[state.activeTab].component,
-                data
+                [title]: data
             }
         }
     },

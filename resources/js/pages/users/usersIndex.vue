@@ -15,15 +15,16 @@ const Store = useStore();
 const componentTab = computed(() => Store.getters.componentTab);
 
 
+
 const addComponent = (title) => {
     const activeTab = Store.getters.activeTab;
+    const componentId = `${Date.now()}`;
     const data = {
-        title: {
-            tabId : [activeTab, title].join('.'),
-            routeName: title 
-        }
+        tabName: title,
+        routeName: `${activeTab}.${title}`,
     }
-    Store.dispatch('addComponent', data);
+    
+    Store.dispatch('addComponent', [componentId, data]);
     console.log(Store.getters.navbarData);
 }
 

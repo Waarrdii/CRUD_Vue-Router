@@ -14,7 +14,7 @@
             :to="{name: componentTab[component].routeName}"
             v-for="component in (Object.keys(componentTab))" :key="component"
             >
-                {{ component }}
+                {{ componentTab[component].tabName }}
             </RouterLink>
         </div>
     </div>

@@ -13,13 +13,14 @@ import store from '../store';
 const Store = useStore();
 
 const addTabData = (title) => {
+    const componentId = `${Date.now()}`;
     const data = {
         title: title,
         routeName: title.toLowerCase(),
         icon: title,
         component : {
-            [`${title}index`] :{
-                tabId: 'tab1',
+            [componentId] :{
+                tabName: 'index',
                 routeName: title
             }
             
