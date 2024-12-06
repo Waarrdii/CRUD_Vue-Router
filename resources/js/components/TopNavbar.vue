@@ -13,8 +13,10 @@
             <RouterLink
             :to="{name: componentTab[component].routeName}"
             v-for="component in (Object.keys(componentTab))" :key="component"
+            :class="{'text-blue-500': component == Store.getters.secondTabActive}"
+            @click="setSecondActiveTab(component)"
             >
-                {{ componentTab[component].tabName }}
+                {{ component  }}
             </RouterLink>
         </div>
     </div>
@@ -36,8 +38,13 @@ const setActiveTab = (item)=>{
     console.log(Store.getters.activeTab);
 }
 
+const setSecondActiveTab = (component) => {
+    Store.dispatch('setSecondTabActive', component);
+    console.log(Store.getters.secondTabActive);
+}
+
 onMounted(() => {
-    console.log(navBar.value);
+    console.log(Store.getters.secondTabActive);
 });
 
 </script>

@@ -11,6 +11,7 @@ const store = createStore({
             },
         },
         activeTab: 'dashboard',
+        secondTabActive : '',
         activeComponent: null
     },
     mutations: {
@@ -27,6 +28,9 @@ const store = createStore({
         setActiveTab(state, title) {
             state.activeTab = title;
         },
+        setSecondTabActive(state, title) {
+            state.secondTabActive = title;
+        },
         addComponent(state, [title, data]) {
             state.data[state.activeTab].component = {
                 ...state.data[state.activeTab].component,
@@ -41,6 +45,9 @@ const store = createStore({
         setActiveTab({ commit }, title) {
             commit('setActiveTab', title);
         },
+        setSecondTabActive ({ commit }, title) {
+            commit('setSecondTabActive', title);
+        },
         addComponent({ commit }, data) {
             commit('addComponent', data);
         }
@@ -54,6 +61,9 @@ const store = createStore({
         },
         activeTab(state) {
             return state.activeTab;
+        },
+        secondTabActive(state) {
+            return state.secondTabActive;
         }
     },
 });

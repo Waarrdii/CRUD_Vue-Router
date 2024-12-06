@@ -13,7 +13,7 @@ import store from '../store';
 const Store = useStore();
 
 const addTabData = (title) => {
-    const componentId = `${Date.now()}`;
+    const componentId = `${title}-${Date.now()}`;
     const data = {
         title: title,
         routeName: title.toLowerCase(),
@@ -28,7 +28,7 @@ const addTabData = (title) => {
     }
     Store.dispatch('addTabData', [data, title]);
     Store.dispatch('setActiveTab', title);
-    console.log(store.getters.navbarData);
+    console.log(store.getters.secondTabActive);
 }
 
 </script>

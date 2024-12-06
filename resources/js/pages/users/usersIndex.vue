@@ -18,14 +18,15 @@ const componentTab = computed(() => Store.getters.componentTab);
 
 const addComponent = (title) => {
     const activeTab = Store.getters.activeTab;
-    const componentId = `${Date.now()}`;
+    const componentId = `${activeTab}-${Date.now()}`;
     const data = {
         tabName: title,
         routeName: `${activeTab}.${title}`,
     }
     
     Store.dispatch('addComponent', [componentId, data]);
-    console.log(Store.getters.navbarData);
+    Store.dispatch('setSecondTabActive', componentId);
+    console.log(Store.getters.secondTabActive);
 }
 
 </script>
