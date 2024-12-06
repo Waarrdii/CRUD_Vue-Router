@@ -3,14 +3,14 @@ import { createStore } from 'vuex';
 const store = createStore({
     state: {
         data : {
-            Dashboard: {
-                title: 'Dashboard',
+            dashboard: {
+                title: 'dashboard',
                 icon: 'dashboard',
                 routeName: 'home',
-                component: ['example', 'usersIndex', 'permissionList']
+                component: {}
             },
         },
-        activeTab: 'Dashboard',
+        activeTab: 'dashboard',
         activeComponent: null
     },
     mutations: {
@@ -26,6 +26,12 @@ const store = createStore({
         },
         setActiveTab(state, title) {
             state.activeTab = title;
+        },
+        addComponent(state, data) {
+            state.data[state.activeTab].component = {
+                ...state.data[state.activeTab].component,
+                data
+            }
         }
     },
     actions: {

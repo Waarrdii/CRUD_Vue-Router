@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import example from '../components/example.vue';
 import usersIndex from '../pages/users/usersIndex.vue';
 import permissionList from '../pages/users/permissionList.vue';
+import UserForm from '../pages/users/UserForm.vue';
 
 const routes = [
     {
@@ -15,6 +16,12 @@ const routes = [
         name: 'users',
         component: usersIndex,
         meta: { title: 'Users Page'}
+    },
+    {
+        path: '/users/create',
+        name: 'users.create',
+        component: UserForm,
+        meta: { title: 'Create User Page'}
     },
     {
         path: '/permissions',

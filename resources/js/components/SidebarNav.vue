@@ -1,8 +1,8 @@
 <template>
     <div class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-2 px-3">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink @click="addTabData('Users')" to="/users">Users</RouterLink>
-        <RouterLink @click="addTabData('Permissions')" to="/permissions">Permissions</RouterLink>
+        <RouterLink @click="addTabData('dashboard')" to="/">Home</RouterLink>
+        <RouterLink @click="addTabData('users')" to="/users">Users</RouterLink>
+        <RouterLink @click="addTabData('permissions')" to="/permissions">Permissions</RouterLink>
     </div>
 </template>
 
@@ -17,11 +17,17 @@ const addTabData = (title) => {
         title: title,
         routeName: title.toLowerCase(),
         icon: title,
-        component: ['index']
+        component : {
+            [`${title}index`] :{
+                tabId: 'tab1',
+                routeName: title
+            }
+            
+        }
     }
     Store.dispatch('addTabData', [data, title]);
     Store.dispatch('setActiveTab', title);
-    console.log(store.getters.activeTab);
+    console.log(store.getters.navbarData);
 }
 
 </script>
