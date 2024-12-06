@@ -40,6 +40,9 @@ const store = createStore({
         },
         setActiveTab({ commit }, title) {
             commit('setActiveTab', title);
+        },
+        addComponent({ commit }, data) {
+            commit('addComponent', data);
         }
     },
     getters: {

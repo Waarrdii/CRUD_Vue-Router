@@ -17,10 +17,10 @@ const componentTab = computed(() => Store.getters.componentTab);
 
 const addComponent = (title) => {
     const activeTab = Store.getters.activeTab;
-    data = {
+    const data = {
         title: {
             tabId : [activeTab, title].join('.'),
-            routeName: title
+            routeName: title 
         }
     }
     Store.dispatch('addComponent', data);
