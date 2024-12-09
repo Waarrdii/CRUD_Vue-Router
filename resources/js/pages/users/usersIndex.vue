@@ -22,11 +22,11 @@ const addComponent = (title) => {
     const data = {
         tabName: title,
         routeName: `${activeTab}.${title}`,
+        isActive : true
     }
     
     Store.dispatch('addComponent', [componentId, data]);
-    Store.dispatch('setSecondTabActive', componentId);
-    console.log(Store.getters.secondTabActive);
+    Store.dispatch('setSecondTabActive', componentId );
 }
 
 </script>

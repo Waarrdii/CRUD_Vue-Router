@@ -12,6 +12,12 @@ const routes = [
         meta: { title: 'Home Page'}
     },
     {
+        path: '/',
+        name: 'dashboard',
+        component: example,
+        meta: { title: 'Home Page'}
+    },
+    {
         path: '/users',
         name: 'users',
         component: usersIndex,

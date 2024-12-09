@@ -7,12 +7,16 @@ const store = createStore({
                 title: 'dashboard',
                 icon: 'dashboard',
                 routeName: 'home',
-                component: {}
+                component: {
+                    '': {
+                        tabName: 'index',
+                        routeName: 'home',
+                        isActive : true
+                    }
+                }
             },
         },
         activeTab: 'dashboard',
-        secondTabActive : '',
-        activeComponent: null
     },
     mutations: {
         addTabData(state, [data, title]) {
@@ -28,14 +32,21 @@ const store = createStore({
         setActiveTab(state, title) {
             state.activeTab = title;
         },
-        setSecondTabActive(state, title) {
-            state.secondTabActive = title;
-        },
         addComponent(state, [title, data]) {
             state.data[state.activeTab].component = {
                 ...state.data[state.activeTab].component,
                 [title]: data
             }
+        },
+        setSecondTabActive(state, title) {
+           //menonaktifkan semua component
+           Object.keys(state.data[state.activeTab].component).forEach((key) => {
+                state.data[state.activeTab].component[key].isActive = false;
+           });
+           //mengaktifkan component yang dipilih
+           if( state.data[state.activeTab].component[title]) {
+            state.data[state.activeTab].component[title].isActive = true;
+           }
         }
     },
     actions: {
@@ -45,11 +56,11 @@ const store = createStore({
         setActiveTab({ commit }, title) {
             commit('setActiveTab', title);
         },
-        setSecondTabActive ({ commit }, title) {
-            commit('setSecondTabActive', title);
-        },
         addComponent({ commit }, data) {
             commit('addComponent', data);
+        },
+        setSecondTabActive({ commit }, title) {
+            commit('setSecondTabActive', title);
         }
     },
     getters: {

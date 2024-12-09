@@ -34,9 +34,7 @@ const Store = useStore();
 
 const componentTab = computed(() => Store.getters.componentTab);
 
-onMounted(() => {
-    console.log(componentTab.value);
-})
+
 </script>
 
 <style lang="scss" scoped></style>
