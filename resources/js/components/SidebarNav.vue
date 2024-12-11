@@ -1,16 +1,37 @@
 <template>
-    <div class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-2 px-3">
-        <RouterLink @click="addTabData('dashboard')" :to="getActiveRoute('dashboard')">Home</RouterLink>
-        <RouterLink @click="addTabData('users')" :to="getActiveRoute('users')">Users</RouterLink>
-        <RouterLink @click="addTabData('permissions')" :to="getActiveRoute('permissions')">Permissions</RouterLink>
-    </div>
+    <ul class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-3 px-6 pt-16">
+        <li class="flex gap-1 cursor-pointer select-none" 
+            v-for="(item, index) in sidebarData" :key="item.name"
+            @click="openMenu(index)">
+            <iconBase :name="item.icon"></iconBase>
+            <span>{{ item.title }}</span>
+            <CardMenu :items="item.subMenu" :class="{ 'hidden': !item.isOpen }"/>
+        </li>
+    </ul>
+
+
+
+
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue';
+import { onMounted, reactive } from 'vue';
 import { useStore } from 'vuex';
+import iconBase from './IconBase.vue';
+import CardMenu from './CardMenu.vue';
 
 const Store = useStore();
+const sidebarData = reactive([]);
+onMounted(() => {
+    sidebarData.push(...Store.getters.sidebarData.slice());
+})
+
+const openMenu = (index) => {
+    sidebarData.forEach((item, i) => {
+        item.isOpen = i === index ? !item.isOpen : false
+    })
+    // console.log(sidebarData);
+}
 
 const addTabData = (title) => {
     if (Store.state.data[title]) {
