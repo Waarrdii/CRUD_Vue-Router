@@ -20,7 +20,7 @@ const store = createStore({
         sidebarData : [
             {
                 title: 'Perusahaan',
-                icon :'mdi-office-building-cog',
+                icon :'mdi-city',
                 isOpen:false,
                 subMenu:[
                     {
@@ -30,12 +30,12 @@ const store = createStore({
                     },
                     {
                         subTitle:'Mata Uang',
-                        icon:'mdi-currency-brl',
+                        icon:'mdi-cash',
                         routeName:''
                     },
                     {
                         subTitle:'Cabang',
-                        icon:'mdi-chart-pie',
+                        icon:'mdi-source-branch',
                         routeName:''
                     },
                     {
@@ -45,182 +45,182 @@ const store = createStore({
                     },
                     {
                         subTitle:'Karyawan',
-                        icon:'mdi-account',
+                        icon:'mdi-account-tie',
                         routeName:''
                     }
                 ]
             },
             {
                 title: 'Buku Besar',
-                icon :'BukuBesar',
+                icon :'mdi-book',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Akun Perkiraan',
-                        icon:'AkunPerkiraan',
+                        icon:'mdi-invoice-list-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Jurnal Umum',
-                        icon:'JurnalUmum',
+                        icon:'mdi-invoice-text-multiple-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Anggaran',
-                        icon:'Anggaran',
+                        icon:'mdi-contrast-box',
                         routeName:''
                     },
                     {
                         subTitle:'Monitoring Anggaran',
-                        icon:'MonitoringAnggaran',
+                        icon:'mdi-clipboard-text-search',
                         routeName:''
                     },
                     {
                         subTitle:'Transfer Anggaran',
-                        icon:'TransferAnggaran',
+                        icon:'mdi-format-rotate-90',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Kas & Bank',
-                icon :'KasBank',
+                icon :'mdi-bank',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Penerimaan Lainnya',
-                        icon:'PenerimaanLainnya',
+                        icon:'mdi-cash-check',
                         routeName:''
                     },
                     {
                         subTitle:'Pembayaran Lainnya',
-                        icon:'PembayaranLainnya',
+                        icon:'mdi-cash-multiple',
                         routeName:''
                     },
                     {
                         subTitle:'Transfer Bank',
-                        icon:'PembayaranLainnya',
+                        icon:'mdi-bank-transfer',
                         routeName:''
                     },
                     {
                         subTitle:'Rekening Koran',
-                        icon:'RekeningKoran',
+                        icon:'mdi-book-open-variant-outline',
                         routeName:''
                     },
                     {
                         subTitle:'History Bank',
-                        icon:'HistoryBank',
+                        icon:'mdi-history',
                         routeName:''
                     },
                     {
                         subTitle:'Rekonsiliasi Bank',
-                        icon:'RekonsiliasiBank',
+                        icon:'mdi-bank-plus',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Penjualan',
-                icon :'Penjualan',
+                icon :'mdi-cart-arrow-right',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Penawaran Penjualan',
-                        icon:'PenawaranPenjualan',
+                        icon:'mdi-hand-coin-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Pesanan Penjualan',
-                        icon:'PesananPenjualan',
+                        icon:'mdi-cart-arrow-down',
                         routeName:''
                     },
                     {
                         subTitle:'Pengiriman Pesanan',
-                        icon:'PengirimanPesanan',
+                        icon:'mdi-truck-fast-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Uang Muka Penjualan',
-                        icon:'UangMukaPenjualan',
+                        icon:'mdi-cash-fast',
                         routeName:''
                     },
                     {
                         subTitle:'Faktur Penjualan',
-                        icon:'FakturPenjualan',
+                        icon:'mdi-clipboard-edit-outline',
                         routeName:''
                     },
                     {
                         subTitle:'penerimaan Penjualan',
-                        icon:'penerimaanPenjualan',
+                        icon:'mdi-cart-check',
                         routeName:''
                     },
                     {
                         subTitle:'Retur Penjualan',
-                        icon:'ReturPenjualan',
+                        icon:'mdi-archive-arrow-down-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Kategori Pelanggan',
-                        icon:'KategoriPelanggan',
+                        icon:'mdi-account-tag',
                         routeName:''
                     },
                     {
                         subTitle:'Pelanggan',
-                        icon:'Pelanggan',
+                        icon:'mdi-account-group',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Pembelian',
-                icon :'Pembelian',
+                icon :'mdi-basket',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Pesanan Pembelian',
-                        icon:'PesananPembelian',
+                        icon:'mdi-basket-plus-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Penerimaan Barang',
-                        icon:'PenerimaanBarang',
+                        icon:'mdi-truck-check-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Uang Muka Pembelian',
-                        icon:'UangMukaPembelian',
+                        icon:'mdi-cash-fast',
                         routeName:''
                     },
                     {
                         subTitle:'Faktur Pembelian',
-                        icon:'FakturPembelian',
+                        icon:'mdi-clipboard-edit-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Pembayaran Pembelian',
-                        icon:'PembayaranPembelian',
+                        icon:'mdi-basket-check',
                         routeName:''
                     },
                     {
                         subTitle:'Retur Pembelian',
-                        icon:'ReturPembelian',
+                        icon:'mdi-archive-arrow-up-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Kategori Pemasok',
-                        icon:'KategoriPemasok',
+                        icon:'mdi-account-tag-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Pemasok',
-                        icon:'Pemasok',
+                        icon:'mdi-account-group-outline',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Persediaan',
-                icon :'Persediaan',
+                icon :'mdi-package-variant',
                 isOpen:false,
                 subMenu:[
                     {

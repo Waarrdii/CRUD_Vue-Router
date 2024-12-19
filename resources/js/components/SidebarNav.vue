@@ -3,6 +3,7 @@
         <li class="flex gap-1 cursor-pointer select-none items-center" 
             v-for="(item, index) in sidebarData" :key="item.name"
             @click="openMenu(index)">
+            <i :class="`mdi ${item.icon}`" class="text-2xl text-gray-500"></i>
             <span>{{ item.title }}</span>
             <CardMenu :items="item.subMenu" :class="{ 'hidden': !item.isOpen }"/>
         </li>
