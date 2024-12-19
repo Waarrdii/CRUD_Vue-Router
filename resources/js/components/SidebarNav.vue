@@ -1,9 +1,8 @@
 <template>
     <ul class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-3 px-6 pt-16">
-        <li class="flex gap-1 cursor-pointer select-none" 
+        <li class="flex gap-1 cursor-pointer select-none items-center" 
             v-for="(item, index) in sidebarData" :key="item.name"
             @click="openMenu(index)">
-            <iconBase :name="item.icon"></iconBase>
             <span>{{ item.title }}</span>
             <CardMenu :items="item.subMenu" :class="{ 'hidden': !item.isOpen }"/>
         </li>
@@ -16,7 +15,6 @@
 <script setup>
 import { onMounted, reactive } from 'vue';
 import { useStore } from 'vuex';
-import iconBase from './IconBase.vue';
 import CardMenu from './CardMenu.vue';
 
 const Store = useStore();

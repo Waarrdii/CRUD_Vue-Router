@@ -20,32 +20,32 @@ const store = createStore({
         sidebarData : [
             {
                 title: 'Perusahaan',
-                icon :'Perusahaan',
+                icon :'mdi-office-building-cog',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Profil Perusahaan',
-                        icon:'ProfilPerusahaan',
+                        icon:'mdi-office-building-cog-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Mata Uang',
-                        icon:'MataUang',
+                        icon:'mdi-currency-brl',
                         routeName:''
                     },
                     {
                         subTitle:'Cabang',
-                        icon:'Cabang',
+                        icon:'mdi-chart-pie',
                         routeName:''
                     },
                     {
                         subTitle:'Departemen',
-                        icon:'Departemen',
+                        icon:'mdi-chart-bubble',
                         routeName:''
                     },
                     {
                         subTitle:'Karyawan',
-                        icon:'Karyawan',
+                        icon:'mdi-account',
                         routeName:''
                     }
                 ]
