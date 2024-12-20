@@ -40,7 +40,7 @@ const store = createStore({
                     },
                     {
                         subTitle:'Departemen',
-                        icon:'mdi-chart-bubble',
+                        icon:'mdi-hub-outline',
                         routeName:''
                     },
                     {
@@ -52,7 +52,7 @@ const store = createStore({
             },
             {
                 title: 'Buku Besar',
-                icon :'mdi-book',
+                icon :'mdi-book-open-outline',
                 isOpen:false,
                 subMenu:[
                     {
@@ -225,71 +225,71 @@ const store = createStore({
                 subMenu:[
                     {
                         subTitle:'Permintaan Barang',
-                        icon:'PermintaanBarang',
+                        icon:'mdi-package-variant-closed-plus',
                         routeName:''
                     },
                     {
                         subTitle:'Pemindahan Barang',
-                        icon:'PemindahanBarang',
+                        icon:'mdi-bag-carry-on',
                         routeName:''
                     },
                     {
                         subTitle:'Penyesuaian Barang',
-                        icon:'PenyesuaianBarang',
+                        icon:'mdi-clipboard-check-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Gudang',
-                        icon:'Gudang',
+                        icon:'mdi-warehouse',
                         routeName:''
                     },
                     {
                         subTitle:'Kategori Barang',
-                        icon:'KategoriBarang',
+                        icon:'mdi-table-edit',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Aset Tetap',
-                icon :'AsetTetap',
+                icon :'mdi-truck',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Aset Tetap',
-                        icon:'AsetTetap',
+                        icon:'mdi-truck-cargo-container',
                         routeName:''
                     },
                     {
                         subTitle:'Kategori Aset Tetap',
-                        icon:'KategoriAsetTetap',
+                        icon:'mdi-inbox-multiple-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Perubahan Aset Tetap',
-                        icon:'PerubahanAsetTetap',
+                        icon:'mdi-truck-plus-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Disposisi Aset Tetap',
-                        icon:'DisposisiAsetTetap',
+                        icon:'mdi-printer-pos-refresh-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Pemindahan Aset',
-                        icon:'PemindahanAset',
+                        icon:'mdi-truck-delivery-outline',
                         routeName:''
                     },
                 ]
             },
             {
                 title: 'Daftar Laporan',
-                icon :'DaftarLaporan',
+                icon :'mdi-chart-tree',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Laporan Keuangan',
-                        icon:'LaporanKeuangan',
+                        icon:'mdi-clipboard-text-multiple-outline',
                         routeName:''
                     },
                     {
@@ -311,22 +311,22 @@ const store = createStore({
             },
             {
                 title: 'Pengaturan',
-                icon :'Setting',
+                icon :'mdi-wrench-cog',
                 isOpen:false,
                 subMenu:[
                     {
                         subTitle:'Preferensi',
-                        icon:'Preferensi',
+                        icon:'mdi-application-cog-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Hak Akses',
-                        icon:'HakAkses',
+                        icon:'mdi-lock-open-variant-outline',
                         routeName:''
                     },
                     {
                         subTitle:'Pengguna',
-                        icon:'Pengguna',
+                        icon:'mdi-account-multiple-outline',
                         routeName:''
                     },
                 ]
