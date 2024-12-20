@@ -1,13 +1,15 @@
 <template>
-    <ul class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-3 px-6 pt-16">
-        <li class="flex gap-1 cursor-pointer select-none items-center" 
+    <div class="bg-slate-900">
+        <ul class="h-screen border-r border-gray-50  w-48 flex flex-col flex-start gap-3 px-6 pt-16">
+        <li class="flex gap-1 cursor-pointer select-none items-center text-gray-100" 
             v-for="(item, index) in sidebarData" :key="item.name"
             @click="openMenu(index)">
-            <i :class="`mdi ${item.icon}`" class="text-2xl text-gray-500"></i>
-            <span>{{ item.title }}</span>
+            <i :class="`mdi ${item.icon}`" class="text-3xl text-gray-100 border border-transparent hover:border hover:border-rose-500 hover:bg-rose-500 rounded py-1 px-2"></i>
+            <span class="text-sm">{{ item.title }}</span>
             <CardMenu :items="item.subMenu" :class="{ 'hidden': !item.isOpen }"/>
         </li>
     </ul>
+    </div>
 
 
 
