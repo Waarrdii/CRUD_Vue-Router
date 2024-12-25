@@ -1,14 +1,11 @@
 <template>
     <div class="flex flex-row">
         <SidebarNav />
-        <div class="flex-1 flex flex-col">
-            <TopNavbar />
-            <RouterView />
-            
+        <div class="flex-1 flex flex-col overflow-x-hidden ">
+            <TopNavbar   />
+            <RouterView/>
         </div>
     </div>
-
-    
 </template>
 
 <script setup>

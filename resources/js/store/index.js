@@ -401,6 +401,13 @@ const store = createStore({
         },
         sidebarData(state) {
             return state.sidebarData;
+        },
+        filteredSidebarData(state) {
+            return state.sidebarData.flatMap(item => 
+                item.subMenu.map(subItem => ({
+                    subTitle: subItem.subTitle,
+                    routeName: subItem.routeName,
+                })));
         }
     },
 });

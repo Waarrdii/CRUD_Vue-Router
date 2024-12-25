@@ -1,6 +1,6 @@
 <template>
     <aside id="sidebar-menu"
-        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        class=" top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-blue-900  dark:bg-gray-800">
             <ul class="space-y-2 font-medium">
@@ -29,6 +29,7 @@
                     <ul id="subMenu" class=" bg-rose-50 text-gray-800 rounded-lg" v-if="item.isOpen">
                         <li v-for="component in item.subMenu" :key="component">
                             <div
+                                
                                 class="flex items-center w-full py-1 text-gray-900 transition duration-75 rounded-lg px-4 group cursor-pointer space-x-2 hover:bg-rose-100 dark:text-white dark:hover:bg-gray-700">
                                 <i :class="`mdi ${component.icon}`" class="text-xl "></i>
                                 <span class="text-sm capitalize">{{ component.subTitle }}</span>

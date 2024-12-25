@@ -1,26 +1,10 @@
 <template>
-    <div class="bg-gray-50 h-16 flex flex-col justify-end ">
-        <div class="flex flex-row gap-4 capitalize h-3/5 items-end border">
-            <RouterLink 
-            @click ="setActiveTab(item)"
-            v-for="item in (Object.keys(navBar))" 
-            :key="item"  
-            :to="getActiveRoute(item)">
-                {{ item }}
-            </RouterLink>
-        </div>
-        <div 
-            
-            class="flex gap-2 capitalize flex-1 items-end border">
-            <RouterLink
-            :to="{name: componentTab[component].routeName}"
-            v-for="component in (Object.keys(componentTab))" :key="component"
-            @click="setSecondActiveTab(component)"
-            :class="{ 'text-blue-500': componentTab[component].isActive }"
-            >
-                {{ component  }}
-            </RouterLink>
-        </div>
+    <div class="overflow-x-scroll w-full">
+        <div class="flex flex-nowrap gap-2 text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400">
+        <span v-for="(item,index) in tabData" :key="item.subTitle" class="text-nowrap inline-block p-4 rounded-t-lg hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300">
+            {{ item.subTitle }}
+        </span>    
+    </div>
     </div>
     
 </template>
@@ -32,25 +16,29 @@ import { useStore } from 'vuex';
 
 const Store = useStore();
 
-const navBar = computed(() => Store.getters.navbarData);
-const componentTab = computed(() => Store.getters.componentTab);
+const tabData = computed(() => Store.getters.filteredSidebarData);
 
-const setActiveTab = (item)=>{
-    Store.dispatch('setActiveTab', item);
-    // console.log(Store.getters.activeTab);
-}
 
-const setSecondActiveTab = (item)=>{
+onMounted(() => {
+    console.log('Component has been mounted.');
+    console.log(Store.getters.filteredSidebarData);
+})
+const setSecondActiveTab = (item) => {
     Store.dispatch('setSecondTabActive', item);
     // console.log(Store.getters.componentTab);
 }
 
+
+const setActiveTab = (item) => {
+    Store.dispatch('setActiveTab', item);
+    // console.log(Store.getters.activeTab);
+}
 const getActiveRoute = (item) => {
-    if(Store.state.data[item] && Store.state.data[item].component) {
-    const components = Store.state.data[item].component;
-    const aciveComponent = Object.keys(components).find(key => components[key].isActive);
-        if(aciveComponent) {
-            return {name : components[aciveComponent].routeName};
+    if (Store.state.data[item] && Store.state.data[item].component) {
+        const components = Store.state.data[item].component;
+        const aciveComponent = Object.keys(components).find(key => components[key].isActive);
+        if (aciveComponent) {
+            return { name: components[aciveComponent].routeName };
         }
     }
     return { name: item.toLowerCase() };
