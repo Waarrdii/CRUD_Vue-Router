@@ -26,27 +26,37 @@ const store = createStore({
                     {
                         subTitle:'Profil Perusahaan',
                         icon:'mdi-office-building-cog-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Mata Uang',
                         icon:'mdi-cash',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Cabang',
                         icon:'mdi-source-branch',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Departemen',
                         icon:'mdi-hub-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Karyawan',
                         icon:'mdi-account-tie',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     }
                 ]
             },
@@ -58,27 +68,37 @@ const store = createStore({
                     {
                         subTitle:'Akun Perkiraan',
                         icon:'mdi-invoice-list-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Jurnal Umum',
                         icon:'mdi-invoice-text-multiple-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Anggaran',
                         icon:'mdi-contrast-box',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Monitoring Anggaran',
                         icon:'mdi-clipboard-text-search',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Transfer Anggaran',
                         icon:'mdi-format-rotate-90',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -90,32 +110,44 @@ const store = createStore({
                     {
                         subTitle:'Penerimaan Lainnya',
                         icon:'mdi-cash-check',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pembayaran Lainnya',
                         icon:'mdi-cash-multiple',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Transfer Bank',
                         icon:'mdi-bank-transfer',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Rekening Koran',
                         icon:'mdi-book-open-variant-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'History Bank',
                         icon:'mdi-history',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Rekonsiliasi Bank',
                         icon:'mdi-bank-plus',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -127,47 +159,65 @@ const store = createStore({
                     {
                         subTitle:'Penawaran Penjualan',
                         icon:'mdi-hand-coin-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pesanan Penjualan',
                         icon:'mdi-cart-arrow-down',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pengiriman Pesanan',
                         icon:'mdi-truck-fast-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Uang Muka Penjualan',
                         icon:'mdi-cash-fast',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Faktur Penjualan',
                         icon:'mdi-clipboard-edit-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'penerimaan Penjualan',
                         icon:'mdi-cart-check',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Retur Penjualan',
                         icon:'mdi-archive-arrow-down-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Kategori Pelanggan',
                         icon:'mdi-account-tag',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pelanggan',
                         icon:'mdi-account-group',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -226,27 +276,37 @@ const store = createStore({
                     {
                         subTitle:'Permintaan Barang',
                         icon:'mdi-package-variant-closed-plus',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pemindahan Barang',
                         icon:'mdi-bag-carry-on',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Penyesuaian Barang',
                         icon:'mdi-clipboard-check-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Gudang',
                         icon:'mdi-warehouse',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Kategori Barang',
                         icon:'mdi-table-edit',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -258,27 +318,37 @@ const store = createStore({
                     {
                         subTitle:'Aset Tetap',
                         icon:'mdi-truck-cargo-container',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Kategori Aset Tetap',
                         icon:'mdi-inbox-multiple-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Perubahan Aset Tetap',
                         icon:'mdi-truck-plus-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Disposisi Aset Tetap',
                         icon:'mdi-printer-pos-refresh-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pemindahan Aset',
                         icon:'mdi-truck-delivery-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -290,22 +360,30 @@ const store = createStore({
                     {
                         subTitle:'Laporan Keuangan',
                         icon:'mdi-clipboard-text-multiple-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'SPT PPN/PPNBM',
                         icon:'SPTPPNPPNBM',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'SPT PPh Ps.21',
                         icon:'SPTPPhPs21',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Bukti Potong PPh Ps.21',
                         icon:'BuktiPotongPPhPs21',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -317,17 +395,23 @@ const store = createStore({
                     {
                         subTitle:'Preferensi',
                         icon:'mdi-application-cog-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Hak Akses',
                         icon:'mdi-lock-open-variant-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                     {
                         subTitle:'Pengguna',
                         icon:'mdi-account-multiple-outline',
-                        routeName:''
+                        routeName:'',
+                        isActive:false,
+                        isOpen:false
                     },
                 ]
             },
@@ -404,9 +488,13 @@ const store = createStore({
         },
         filteredSidebarData(state) {
             return state.sidebarData.flatMap(item => 
-                item.subMenu.map(subItem => ({
+                item.subMenu
+                .filter(subItem => subItem.isActive)
+                .map(subItem => ({
                     subTitle: subItem.subTitle,
                     routeName: subItem.routeName,
+                    isActive: subItem.isActive,
+                    isOpen: subItem.isOpen
                 })));
         }
     },

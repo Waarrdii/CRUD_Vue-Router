@@ -27,13 +27,13 @@
                         <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ item.title }}</span>
                     </button>
                     <ul id="subMenu" class=" bg-rose-50 text-gray-800 rounded-lg" v-if="item.isOpen">
-                        <li v-for="component in item.subMenu" :key="component">
-                            <div
-                                
+                        <li v-for="(item, subItemIndex) in item.subMenu" :key="item.subTitle">
+                            <button type="button"
+                                @click="activeMenu(index, subItemIndex)"
                                 class="flex items-center w-full py-1 text-gray-900 transition duration-75 rounded-lg px-4 group cursor-pointer space-x-2 hover:bg-rose-100 dark:text-white dark:hover:bg-gray-700">
-                                <i :class="`mdi ${component.icon}`" class="text-xl "></i>
-                                <span class="text-sm capitalize">{{ component.subTitle }}</span>
-                            </div>
+                                <i :class="`mdi ${item.icon}`" class="text-xl "></i>
+                                <span class="text-sm capitalize">{{ item.subTitle }}</span>
+                            </button>
                         </li>
                     </ul>
                 </li>
@@ -51,6 +51,7 @@ import { useStore } from 'vuex';
 
 const Store = useStore();
 const sidebarData = reactive([]);
+
 onMounted(() => {
     sidebarData.push(...Store.getters.sidebarData.slice());
 })
@@ -62,42 +63,21 @@ const openMenu = (index) => {
     // console.log(sidebarData);
 }
 
-const addTabData = (title) => {
-    if (Store.state.data[title]) {
-        return;
-    } else {
-        const componentId = `${title}-${Date.now()}`;
-        const data = {
-            title: title,
-            routeName: title.toLowerCase(),
-            icon: title,
-            component: {
-                [componentId]: {
-                    tabName: 'index',
-                    routeName: title,
-                    isActive: true
-                }
+const activeMenu = (parentIndex, subItemIndex) => {
+    // Pertama, iterasi seluruh sidebarData untuk menutup semua subMenu
+    sidebarData.forEach((item) => {
+        item.subMenu.forEach((subItem) => {
+            subItem.isOpen = false;
+        })
+    })
 
-            }
-        }
-        Store.dispatch('addTabData', [data, title]);
-        Store.dispatch('setActiveTab', title);
-        Store.dispatch('setSecondTabActive', componentId);
-        // console.log(Store.getters.componentTab);
+    // Kemudian, aktifkan subMenu yang dipilih
+    sidebarData[parentIndex].subMenu[subItemIndex].isOpen = true;
+    
+    //mengaktifkan subMenu yang dipilih
+    sidebarData[parentIndex].subMenu[subItemIndex].isActive = true;
+
     }
-}
-
-const getActiveRoute = (item) => {
-    if (Store.state.data[item] && Store.state.data[item].component) {
-        const components = Store.state.data[item].component;
-        const aciveComponent = Object.keys(components).find(key => components[key].isActive);
-        if (aciveComponent) {
-            return { name: components[aciveComponent].routeName };
-        }
-    }
-    return { name: item.toLowerCase() };
-}
-
 
 </script>
 
