@@ -2,8 +2,8 @@ import { createStore } from 'vuex';
 
 const store = createStore({
     state: {
-        data : {
-            dashboard: {
+        data : [
+            {
                 title: 'dashboard',
                 icon: 'dashboard',
                 routeName: 'home',
@@ -15,7 +15,7 @@ const store = createStore({
                     }
                 }
             },
-        },
+        ],
         activeTab: 'dashboard',
         sidebarData : [
             {
