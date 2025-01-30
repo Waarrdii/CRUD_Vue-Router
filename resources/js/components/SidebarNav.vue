@@ -70,13 +70,17 @@ const activeMenu = (parentIndex, subItemIndex) => {
             subItem.isOpen = false;
         })
     })
-
     // Kemudian, aktifkan subMenu yang dipilih
     sidebarData[parentIndex].subMenu[subItemIndex].isOpen = true;
-    
     //mengaktifkan subMenu yang dipilih
     sidebarData[parentIndex].subMenu[subItemIndex].isActive = true;
 
+    // Menyimpan perubahan ke Vuex
+    const data = {
+        'title' : sidebarData[parentIndex].title,
+        'routeName' : sidebarData[parentIndex].subMenu[subItemIndex].routeName,
+        'isActive' : true,
+    }
     }
 
 </script>
