@@ -4,16 +4,7 @@ const store = createStore({
     state: {
         data : [
             {
-                title: 'dashboard',
-                icon: 'dashboard',
-                routeName: 'home',
-                component: {
-                    '': {
-                        tabName: 'index',
-                        routeName: 'home',
-                        isActive : true
-                    }
-                }
+                title: 'dashboard'
             },
         ],
         activeTab: 'dashboard',
@@ -418,14 +409,18 @@ const store = createStore({
         ]
     },
     mutations: {
-        addTabData(state, [data, title]) {
-            if(state.data[title]) {
-                return;
-            } else {
-                state.data = {
-                    ...state.data,
-                    [title]: data
-                }
+        addData(state, payload) {
+            // Nonaktifkan isActive di semua data lainnya
+            state.data.forEach(item => {
+                item.isActive = false;
+            });
+            //cari indexs data yang sudah ada dengan title yang sama
+            const index = state.data.findIndex(item => item.title === payload.title);
+            if (index !== -1) {
+                state.data[index].isActive = true;
+            }else {
+                // Jika data belum ada, tambahkan data baru
+                state.data.push(payload);
             }
         },
         setActiveTab(state, title) {
@@ -454,8 +449,8 @@ const store = createStore({
         }
     },
     actions: {
-        addTabData({ commit }, [data, title]) {
-            commit('addTabData', [data, title]);
+        addData({ commit }, playload) {
+            commit('addData', playload);
         },
         setActiveTab({ commit }, title) {
             commit('setActiveTab', title);

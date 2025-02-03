@@ -77,10 +77,13 @@ const activeMenu = (parentIndex, subItemIndex) => {
 
     // Menyimpan perubahan ke Vuex
     const data = {
-        'title' : sidebarData[parentIndex].title,
-        'routeName' : sidebarData[parentIndex].subMenu[subItemIndex].routeName,
-        'isActive' : true,
+        title : sidebarData[parentIndex].subMenu[subItemIndex].subTitle,
+        routeName : sidebarData[parentIndex].subMenu[subItemIndex].routeName,
+        isActive : true,
     }
+    // console.log(data);
+    Store.dispatch('addData', data);
+    console.log(Store.getters.navbarData);
     }
 
 </script>
