@@ -8,7 +8,7 @@ const store = createStore({
                 isActive: true
             },
         ],
-        activeTab: 'dashboard',
+        SecondaryTab : {},
         sidebarData : [
             {
                 title: 'Perusahaan',
@@ -424,29 +424,15 @@ const store = createStore({
                 state.data.push(payload);
             }
         },
-        setActiveTab(state, index) {
-            // Nonaktifkan isActive di semua data lainnya
-            state.data.forEach(item => {
-                item.isActive = false;
-            });
-            //activekan data yang dipilih
-            state.data[index].isActive = true;
-        },
-        addComponent(state, [title, data]) {
-            state.data[state.activeTab].component = {
-                ...state.data[state.activeTab].component,
-                [title]: data
+        addSecondaryTab(state, payload) {
+            const {mainTab, tab} = payload;
+
+            //memastikan mainTab sudah ada
+            if (!state.SecondaryTab[mainTab]) {
+                state.SecondaryTab[mainTab] = [];
             }
-        },
-        setSecondTabActive(state, title) {
-           //menonaktifkan semua component
-           Object.keys(state.data[state.activeTab].component).forEach((key) => {
-                state.data[state.activeTab].component[key].isActive = false;
-           });
-           //mengaktifkan component yang dipilih
-           if( state.data[state.activeTab].component[title]) {
-            state.data[state.activeTab].component[title].isActive = true;
-           }
+            //tambahkan tab ke array secondary tab untuk mainTab
+            state.SecondaryTab[mainTab].push(tab);
         },
         updateSidebarData(state, index) {
             state.sidebarData.forEach((item, i) => {
@@ -455,8 +441,11 @@ const store = createStore({
         }
     },
     actions: {
-        addData({ commit }, playload) {
-            commit('addData', playload);
+        addData({ commit }, payload) {
+            commit('addData', payload);
+        },
+        addSecondaryTab({ commit }, payload) {
+            commit('addSecondaryTab', payload);
         },
         setActiveTab({ commit }, item) {
             commit('setActiveTab', item);
@@ -474,6 +463,9 @@ const store = createStore({
     getters: {
         navbarData(state) {
             return state.data;
+        },
+        secondaryTab(state) {
+            return state.SecondaryTab;
         },
         componentTab(state) {
             return state.data[state.activeTab].component;

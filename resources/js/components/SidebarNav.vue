@@ -76,15 +76,21 @@ const activeMenu = (parentIndex, subItemIndex) => {
     sidebarData[parentIndex].subMenu[subItemIndex].isActive = true;
 
     // Menyimpan perubahan ke Vuex
+    const title = sidebarData[parentIndex].subMenu[subItemIndex].subTitle;
+    const routeName = sidebarData[parentIndex].subMenu[subItemIndex].routeName;
+    const isActive = true;
+    Store.dispatch('addData', { title, routeName, isActive });
+
     const data = {
-        title : sidebarData[parentIndex].subMenu[subItemIndex].subTitle,
-        routeName : sidebarData[parentIndex].subMenu[subItemIndex].routeName,
+    mainTab : sidebarData[parentIndex].title,
+    tab : {
+        title : "index",
         isActive : true,
     }
-    // console.log(data);
-    Store.dispatch('addData', data);
-    console.log(Store.getters.navbarData);
-    }
+    };
+    Store.dispatch('addSecondaryTab', data);
+    console.log(Store.getters.secondaryTab);
+}
 
 </script>
 
