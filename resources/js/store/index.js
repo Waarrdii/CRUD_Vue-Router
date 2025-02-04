@@ -4,7 +4,8 @@ const store = createStore({
     state: {
         data : [
             {
-                title: 'dashboard'
+                title: 'Dashboard',
+                isActive: true
             },
         ],
         activeTab: 'dashboard',
@@ -423,8 +424,13 @@ const store = createStore({
                 state.data.push(payload);
             }
         },
-        setActiveTab(state, title) {
-            state.activeTab = title;
+        setActiveTab(state, index) {
+            // Nonaktifkan isActive di semua data lainnya
+            state.data.forEach(item => {
+                item.isActive = false;
+            });
+            //activekan data yang dipilih
+            state.data[index].isActive = true;
         },
         addComponent(state, [title, data]) {
             state.data[state.activeTab].component = {
@@ -452,8 +458,8 @@ const store = createStore({
         addData({ commit }, playload) {
             commit('addData', playload);
         },
-        setActiveTab({ commit }, title) {
-            commit('setActiveTab', title);
+        setActiveTab({ commit }, item) {
+            commit('setActiveTab', item);
         },
         addComponent({ commit }, data) {
             commit('addComponent', data);
