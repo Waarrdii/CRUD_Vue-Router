@@ -13,33 +13,15 @@
 </template>
 
 <script setup>
-import { computed, onMounted } from 'vue';
+import { computed } from 'vue';
 import { useStore } from 'vuex';
 
-const Store = useStore();
+const store = useStore();
 
-const tabData = computed(() => Store.getters.navbarData);
-
-
-const setSecondActiveTab = (item) => {
-    Store.dispatch('setSecondTabActive', item);
-    // console.log(Store.getters.componentTab);
-}
-
+const tabData = computed(() => store.getters.navbarData);
 
 const setActiveTab = (index) => {
-    Store.dispatch('setActiveTab', index);
-    // console.log(Store.getters.activeTab);
-}
-const getActiveRoute = (item) => {
-    if (Store.state.data[item] && Store.state.data[item].component) {
-        const components = Store.state.data[item].component;
-        const aciveComponent = Object.keys(components).find(key => components[key].isActive);
-        if (aciveComponent) {
-            return { name: components[aciveComponent].routeName };
-        }
-    }
-    return { name: item.toLowerCase() };
+    store.dispatch('setActiveTab', index);
 }
 
 </script>
