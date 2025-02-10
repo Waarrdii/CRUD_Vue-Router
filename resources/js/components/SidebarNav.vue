@@ -79,17 +79,16 @@ const activeMenu = (parentIndex, subItemIndex) => {
     const title = sidebarData[parentIndex].subMenu[subItemIndex].subTitle;
     const routeName = sidebarData[parentIndex].subMenu[subItemIndex].routeName;
     const isActive = true;
-    Store.dispatch('addData', { title, routeName, isActive });
+   
+    const subTab = [
+        {
+            subTabTitle: 'Index',
+            isActive: true
+        }
+    ]
 
-    const data = {
-    mainTab : sidebarData[parentIndex].title,
-    tab : {
-        title : "index",
-        isActive : true,
-    }
-    };
-    Store.dispatch('addSecondaryTab', data);
-    console.log(Store.getters.secondaryTab);
+    Store.dispatch('addData', { title, routeName, isActive, subTab });
+    console.log(Store.getters.navbarData);
 }
 
 </script>

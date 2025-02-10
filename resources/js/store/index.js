@@ -5,10 +5,15 @@ const store = createStore({
         data : [
             {
                 title: 'Dashboard',
-                isActive: true
+                isActive: true,
+                subTab: [
+                    {
+                    subTabTitle: 'Index',
+                    isActive: true
+                }]
             },
         ],
-        SecondaryTab : {},
+        SecondaryTab : [],
         sidebarData : [
             {
                 title: 'Perusahaan',
@@ -424,28 +429,21 @@ const store = createStore({
                 state.data.push(payload);
             }
         },
-        addSecondaryTab(state, payload) {
-            const {mainTab, tab} = payload;
-
-            //memastikan mainTab sudah ada
-            if (!state.SecondaryTab[mainTab]) {
-                state.SecondaryTab[mainTab] = [];
-            }
-            //tambahkan tab ke array secondary tab untuk mainTab
-            state.SecondaryTab[mainTab].push(tab);
-        },
         updateSidebarData(state, index) {
             state.sidebarData.forEach((item, i) => {
                 item.isOpen = i === index ? !item.isOpen : false;
             })
-        }
+        },
+        setActiveTab(state, item) {
+            state.data.forEach(item => {
+                item.isActive = false;
+            });
+            state.data[item].isActive = true;
+        },
     },
     actions: {
         addData({ commit }, payload) {
             commit('addData', payload);
-        },
-        addSecondaryTab({ commit }, payload) {
-            commit('addSecondaryTab', payload);
         },
         setActiveTab({ commit }, item) {
             commit('setActiveTab', item);
@@ -465,7 +463,10 @@ const store = createStore({
             return state.data;
         },
         secondaryTab(state) {
-            return state.SecondaryTab;
+            return state.data
+            .filter(item => item.isActive)
+            .map(item => item.subTab)
+            .flat();
         },
         componentTab(state) {
             return state.data[state.activeTab].component;
